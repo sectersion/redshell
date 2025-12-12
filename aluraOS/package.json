@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon --ext html,png,ico,map,wasm,ttf,yaml src/index.js"
   },
-  "author": "dyamuh",
+  "author": "sectersion",
   "license": "none",
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^2.1.7",
@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "eslint": "^9.15.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.11"
   }
 }
