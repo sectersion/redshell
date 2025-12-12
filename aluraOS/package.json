@@ -8,9 +8,10 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon --ext html,png,ico,map,wasm,ttf,yaml src/index.js"
   },
-  "author": "dyamuh",
+  "author": "sectersion",
   "license": "none",
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^2.1.7",
@@ -23,6 +24,7 @@
     "wisp-server-node": "^1.1.7"
   },
   "devDependencies": {
-    "eslint": "^9.15.0"
+    "eslint": "^9.15.0",
+    "nodemon": "^3.1.11"
   }
 }
