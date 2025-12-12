@@ -7,11 +7,22 @@ services:
     restart: unless-stopped
     user: "1000:1000"
     command: ["code-server", "--bind-addr=0.0.0.0:8080", "--auth=none"]
-    ports:
-      - "8080:8080"
     volumes:
       - ./project:/home/coder/project
       - code_server_config:/home/coder/.config
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - code-server
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   code_server_config:
